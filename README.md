@@ -7,7 +7,9 @@ docker-compose run php chmod -R 0777 /var/www/html/storage
 ```
 
 #忘備録  
-```docker-compose run php composer create-project --prefer-dist laravel/laravel .```
+```
+docker-compose run php composer create-project --prefer-dist laravel/laravel .  
+```
 
 ```
 docker exec -it laravel-php bash  
