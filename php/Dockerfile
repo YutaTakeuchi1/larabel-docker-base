@@ -19,3 +19,12 @@ ENV COMPOSER_HOME /composer
 ENV PATH $PATH:/composer/vendor/bin
 # タイムゾーン設定
 ENV TZ=Asia/Tokyo
+
+# Node.jsとYarnのバージョンを指定してインストール
+ARG NODE_VERSION=20
+ARG YARN_VERSION=1.22
+
+RUN apt-get update && apt-get install -y curl && \
+    curl -sL https://deb.nodesource.com/setup_${NODE_VERSION}.x | bash - && \
+    apt-get install -y nodejs && \
+    npm install -g yarn@${YARN_VERSION}
